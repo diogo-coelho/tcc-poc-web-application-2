@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/*                      Estilos da Página Main                        */
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: $background;
+    flex-direction: column;
+
+    .navigation-row {
+        width: inherit;
+    }
+
+    .content-area {
+        width: inherit;
+        padding: 20px;
+        height: calc(100vh - 65px);
+    }
+}

@@ -1,32 +1,29 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+  export default {
+    name: 'App',
+    methods: {
+      validaSessao () {
+        const json = localStorage.getItem("__chave_usuario");
+        const token = json ? json : null;
+        if (!token) {
+          if (this.$router.name != 'AuthView') {
+            this.$router.push({ name: 'AuthView' })
+          }
+        } else {
+          this.$router.push({ name: 'MainView' })
+        }
+      }
+    },
+    created () {
+      this.validaSessao()
     }
   }
-}
+</script>
+
+<style lang="scss">
+ @import './assets/sass/app.scss';
 </style>

@@ -1,0 +1,230 @@
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/*                         Arquivo de mixins                          */
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+@mixin button_principal {
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $white;
+    background-color: $blue_1;
+    border-radius: 3px;
+    border: none;
+    width: auto;
+
+    &:hover {
+        background-color: $blue_3;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    * {
+        color: $white;
+    }
+}
+
+@mixin button_primario {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $white;
+    background-color: $blue_1;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+    border: 1px solid $blue_1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: $blue_3;
+        background-color: $blue_3;
+
+        transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    * {
+        color: $white;
+    }
+}
+
+@mixin button_secundario {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $orange;
+    background-color: $white;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+    border: 1px solid $gray_2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition: background-color 0.3s, border 0.3s, color 0.3s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: $orange;
+        border: 1px solid $orange;
+
+        transition: background-color 0.3s, border 0.3s, color 0.3s ease-in-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    * {
+        color: $white;
+    }
+}
+
+@mixin button_auth {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $blue_1;
+    background-color: $white;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+    border: 1px solid $blue_1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: $blue_1;
+        border: 1px solid $blue_1;
+
+        transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    * {
+        color: $blue_1;
+    }
+}
+
+@mixin button_sem_background {
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $gray_4;
+    background-color: transparent;
+    border-radius: 3px;
+    border: none;
+    width: auto;
+
+    &:hover {
+        color: $blue_1;
+    }
+
+    &:focus {
+        color: $blue_1;
+        outline: none;
+    }
+
+    * {
+        color: $blue_1;
+    }
+}
+
+@mixin input_button {
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    
+    &:hover {
+        background-color: $gray_5;
+    }
+    
+    &:focus, &:active {
+        border: 1px solid $gray_2;
+    }
+}
+
+@mixin button_default {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: $font-family-body;
+    font-size: $font-family-body-12;
+    font-weight: 400;
+    position: relative;
+    color: $white;
+    background-color: $blue_1;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+    border: 1px solid $blue_1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: $blue_3;
+        border: 1px solid $blue_3;
+
+        transition: background-color 0.5s, border 0.5s, color 0.5s ease-in-out;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    * {
+        color: $white;
+    }
+}

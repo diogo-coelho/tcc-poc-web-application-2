@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/*                           Estilos Básicos                          */
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    width: 100%;
+    height: 45px;
+    padding: 5px 7px;
+    border: 3px solid $gray_5;
+    border-radius: 3px;
+    outline: none;
+    font-size: $font-family-heading-13;
+}
+
+input[type='password'] {
+    font: small-caption;
+    font-size: $font-family-heading-16;
+}
