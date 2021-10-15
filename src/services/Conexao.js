@@ -10,4 +10,15 @@ const apiClient = axios.create({
     }
 });
 
+// Add a request interceptor
+apiClient.interceptors.request.use((config) => {
+    const json = localStorage.getItem("__chave_usuario");
+    const token = json ? JSON.parse(atob(json)) : null;
+    if (token) {
+        config.headers.Authorization =  token.token_access;
+    }
+
+    return config;
+});
+
 export { apiClient };

@@ -1,0 +1,80 @@
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/*                         Estilos de Rastreio                        */
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+
+.list-area {
+    h4 {
+        font-size: $font-family-heading-24;
+        font-weight: $font-weight-700;
+        margin-bottom: 20px;
+    }
+
+    #map {
+        width: 100%;
+        height: calc(100vh - 105px);
+        background-color: #fff!important;
+    }
+
+    .box {
+        background-color: #fff;
+        margin-top: 20px;
+        box-shadow: $box-shadow-2;
+
+        .title {
+            font-size: $font-family-heading-16;
+            font-weight: $font-weight-700;
+            margin-bottom: 15px;
+            padding: 20px;
+            padding-bottom: 0px;
+            margin: 0;
+        }
+    }
+
+    .box.info {
+        padding: 20px;
+
+        .flex {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        h3 {
+            font-size: $font-family-heading-16;
+            font-weight: $font-weight-700;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: $font-family-heading-13;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .f-b {
+            font-weight: $font-weight-600;
+        }
+    }
+}
+
+@media only screen and (min-width:720px) {
+
+    .list-area .box.info {
+        .flex {
+            justify-content: space-between;
+            flex-direction: row;
+
+            div:first-child {
+                width: 70%;
+            }
+
+            div:last-child {
+                width: 30%;
+                margin-left: 20px;
+            }
+        }
+    }
+    
+}

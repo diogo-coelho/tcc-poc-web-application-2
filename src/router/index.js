@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MainView from '@/views/MainView.vue'
 import AuthView from '@/views/AuthView.vue'
+import RastreioListagemView from '@/views/RastreioListagemView.vue'
 import RastreioView from '@/views/RastreioView.vue'
 
 Vue.use(VueRouter)
@@ -10,7 +11,7 @@ const routes = [
   {
     // Rota MainView
     name: "MainView",
-    path: "/",
+    path: "/home",
     component: MainView
   },
   {
@@ -20,9 +21,15 @@ const routes = [
     component: AuthView
   },
   {
-    name: "RastreioView",
+    name: "RastreioListagemView",
     path: "/rastreio",
-    component: RastreioView
+    component: RastreioListagemView
+  },
+  {
+    name: "RastreioView",
+    path: "/rastreio/:tracking_code",
+    component: RastreioView,
+    props: true
   }
 ]
 
