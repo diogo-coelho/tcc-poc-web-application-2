@@ -18,6 +18,7 @@
         if (!token) {
           if (this.$router.name != 'AuthView') {
             this.$router.push({ name: 'AuthView' })
+            return
           }
         } else {
           JsonWebToken.verify(token.token_access, process.env.VUE_APP_JWT_SECRET, (err, decoded) => {
@@ -35,6 +36,7 @@
           });
 
           this.$router.push({ name: 'MainView' }).catch(() => { })
+          return
         }
       }
     },

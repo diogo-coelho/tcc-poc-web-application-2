@@ -4,6 +4,7 @@ import MainView from '@/views/MainView.vue'
 import AuthView from '@/views/AuthView.vue'
 import RastreioListagemView from '@/views/RastreioListagemView.vue'
 import RastreioView from '@/views/RastreioView.vue'
+import Store from '@/store/index'
 
 Vue.use(VueRouter)
 
@@ -11,7 +12,7 @@ const routes = [
   {
     // Rota MainView
     name: "MainView",
-    path: "/home",
+    path: "/",
     component: MainView
   },
   {
@@ -38,5 +39,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  Store.commit('TOGGLE_MENU_PRINCIPAL', false);
+
+  next();
+});
 
 export default router

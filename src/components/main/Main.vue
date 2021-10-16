@@ -4,6 +4,8 @@
             <navigation />
         </div>
 
+        <menu-lateral></menu-lateral>
+
         <div class="content-area">
             <h1>Seja bem-vindo(a), {{ user.name }} !</h1>
             <div class="content-row">
@@ -15,12 +17,14 @@
 
 <script>
 import Navigation from "@/shared/Navigation.vue";
+import MenuLateral from "@/shared/MenuLateral.vue"
 import { mapState } from 'vuex';
 
 export default {
     name: "Main",
     components: {
-        Navigation
+        Navigation, 
+        MenuLateral
     },
     computed: {
         ...mapState(['user'])

@@ -4,6 +4,8 @@
             <navigation />
         </div>
 
+        <menu-lateral></menu-lateral>
+
         <div v-if="!loading" class="list-area">
             <ul v-if="data.length > 0">
                 <rastreio-item 
@@ -26,12 +28,14 @@
 import Navigation from '@/shared/Navigation.vue';
 import RastreioService from "@/services/RastreioService";
 import RastreioItem from '@/components/rastreio/RastreioItem.vue';
+import MenuLateral from "@/shared/MenuLateral.vue";
 
 export default {
     name: 'RastreioListagem',
     components: {
         Navigation,
-        RastreioItem
+        RastreioItem,
+        MenuLateral
     },
     data () {
         return {

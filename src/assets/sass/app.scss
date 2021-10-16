@@ -1,6 +1,8 @@
 // Imports
 @import '_variables';
 
+@import 'core/fonts';
+
 @import '_resets';
 
 @import '_mixins';
@@ -10,6 +12,8 @@
 @import 'auth.scss';
 
 @import 'nav.scss';
+
+@import 'menu_lateral';
 
 @import 'main-page.scss';
 

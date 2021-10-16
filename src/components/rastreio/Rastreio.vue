@@ -4,6 +4,8 @@
             <navigation />
         </div>
 
+        <menu-lateral></menu-lateral>
+
         <div class="list-area">
             <h4>Rastreio de Objeto: {{ info ? info.tracking_code : '' }}</h4>
 
@@ -44,12 +46,14 @@
 <script>
 import Navigation from '@/shared/Navigation.vue';
 import Tracking from '@/components/rastreio/Tracking.vue';
+import MenuLateral from "@/shared/MenuLateral.vue";
 
 export default {
     name: "Rastreio",
     components: {
         Navigation,
-        Tracking
+        Tracking,
+        MenuLateral
     },
     props: {
         tracking: {
