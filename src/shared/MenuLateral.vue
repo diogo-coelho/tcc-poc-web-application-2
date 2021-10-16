@@ -21,7 +21,7 @@
 
             <ul>
                 <li>
-                    <router-link to="/">
+                    <router-link to="/" exact>
                         <p class="menu-visivel" :class="{ active: menuPrincipal }">
                             Home
                         </p>

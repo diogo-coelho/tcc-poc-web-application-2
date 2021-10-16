@@ -30,7 +30,7 @@
     .list-area {
         li {
             padding: 20px;
-            border-bottom: 1px solid $gray_3;
+            border-bottom: 1px solid #ccc;
 
             h4 {
                 font-size: $font-family-heading-24;
@@ -59,6 +59,21 @@
             border-bottom: transparent;
         }
     }
+}
+
+.content-row a {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: $font-weight-600;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: $box-shadow-2;
+    color:$gray_4;
+}
+
+.content-row a:hover {
+    color:$blue_3;
 }
 
 @media only screen and (min-width:720px) {

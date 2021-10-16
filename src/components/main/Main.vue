@@ -8,8 +8,13 @@
 
         <div class="content-area">
             <h1>Seja bem-vindo(a), {{ user.name }} !</h1>
+
             <div class="content-row">
                 <router-link to="/rastreio">Rastreio de objetos</router-link>
+            </div>
+
+            <div class="content-row">
+                <router-link to="/calculo-frete">Cálculo de Frete</router-link>
             </div>
         </div>
     </div>

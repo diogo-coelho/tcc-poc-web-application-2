@@ -78,11 +78,12 @@ nav.menu-lateral {
         margin-top: 20px;
 
         li {
-            padding: 20px;
             border-bottom: 1px solid $gray_3;
             cursor: pointer;
 
             a {
+                display: block;
+                padding: 20px;
                 color: $white;
             }
         }
@@ -91,12 +92,16 @@ nav.menu-lateral {
             border-bottom: none;
         }
 
-        li:hover {
+        li:hover, .router-link-active {
             background-color: $gray_4;
 
-            a {
+            a{
                 color: $blue_1;
             }
+        }
+
+        .router-link-active {
+            color: $blue_1;
         }
     }
 }

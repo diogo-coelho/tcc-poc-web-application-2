@@ -9,7 +9,11 @@ export default {
                 return response.data;
             })
             .catch((err) => {
-                return { err_status: err.response.status, message: err.response.message };
+                if (err.response && err.response.status == 400) {
+                    return { err_status: err.response.status, message: 'Parâmetros inválidos' };
+                } 
+                
+                return { err_status: err.response.status, message: err };
             });
     },
     getObjectTrackingById (id) {
@@ -18,7 +22,11 @@ export default {
                 return response.data;
             })
             .catch((err) => {
-                return { err_status: err.response.status, message: err.response.message };
+                if (err.response && err.response.status == 400) {
+                    return { err_status: err.response.status, message: 'Parâmetros inválidos' };
+                } 
+                
+                return { err_status: err.response.status, message: err };
             });
     }
 }
