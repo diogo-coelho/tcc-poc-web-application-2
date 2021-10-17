@@ -35,6 +35,7 @@
 
 <script>
 import AuthenticateService from "@/services/AuthenticationService";
+import { mapState } from "vuex";
 
 export default {
   name: "Auth",
@@ -45,6 +46,9 @@ export default {
         password: ''
       }
     }
+  },
+  computed: {
+    ...mapState(['route'])
   },
   methods: {
     logar () {
@@ -61,7 +65,10 @@ export default {
             ));
 
             this.$toast.success(`Usuário logado`);
-            this.$router.push({ name: 'MainView' });
+            const qKey = Object.keys(this.route.query);
+            const qValue = Object.values(this.route.query)[0];
+
+            this.$router.push({ name: this.route.name, query: { [qKey]: qValue }});
 
           } else {
             this.$toast.error(`${ Object.prototype.hasOwnProperty.call(response,'message') ? response.message: response }`);

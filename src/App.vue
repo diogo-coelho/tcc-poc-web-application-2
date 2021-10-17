@@ -4,27 +4,31 @@
 
 <script>
   import JsonWebToken from './../node_modules/jsonwebtoken/index';
-  import { mapActions } from 'vuex';
+  import { mapActions, mapState } from 'vuex';
 
   export default {
     name: 'App',
+    computed: {
+      ...mapState(['route'])
+    },
     methods: {
       ...mapActions([
         'configurarSessao'
       ]),
       validaSessao () {
+        console.log(this.route);
         const json = localStorage.getItem("__chave_usuario");
         const token = json ? JSON.parse(atob(json)) : null;
         if (!token) {
-          if (this.$router.name != 'AuthView') {
-            this.$router.push({ name: 'AuthView' })
+          if (this.$router.name != 'AuthView') {            
+            this.$router.push({ name: 'AuthView' });
             return
           }
         } else {
           JsonWebToken.verify(token.token_access, process.env.VUE_APP_JWT_SECRET, (err, decoded) => {
               if (err) {
                 localStorage.removeItem("__chave_usuario");
-                this.$router.push({ name: 'AuthView' })
+                this.$router.push({ name: 'AuthView' });
               } else {
                 this.configurarSessao({
                   id: decoded.id,
@@ -35,7 +39,9 @@
               }
           });
 
-          this.$router.push({ name: 'MainView' }).catch(() => { })
+          const qKey = Object.keys(this.route.query);
+          const qValue = Object.values(this.route.query)[0];
+          this.$router.push({ name: this.route.name , query: { [qKey]: qValue }}).catch(() => { })
           return
         }
       }

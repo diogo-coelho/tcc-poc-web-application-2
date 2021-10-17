@@ -11,7 +11,8 @@ export default new Vuex.Store({
       name: null,
       profile_id: null
     },
-    menuPrincipal: false
+    menuPrincipal: false,
+    route: undefined
   },
   mutations: {
     SET_USER: (state, usuario) => {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     TOGGLE_MENU_PRINCIPAL: (state, boolean) => {
       state.menuPrincipal = boolean;
+    },
+    SET_NAME_ROUTE: (state, name) => {
+      state.route = name;
     }
   },
   actions: {
@@ -27,6 +31,9 @@ export default new Vuex.Store({
     },
     toggleMenuPrincipal: ({ commit }, boolean) => {
       commit('TOGGLE_MENU_PRINCIPAL', boolean);
+    },
+    setRouteName: ({ commit }, name) => {
+      commit('SET_NAME_ROUTE', name);
     }
   },
   modules: {

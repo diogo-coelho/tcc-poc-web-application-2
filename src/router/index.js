@@ -6,6 +6,7 @@ import RastreioListagemView from '@/views/RastreioListagemView.vue'
 import RastreioView from '@/views/RastreioView.vue'
 import CalculoFreteView from '@/views/CalculoFreteView.vue'
 import CalculoFreteResultadoView from '@/views/CalculoFreteResultadoView.vue'
+import ReporteEntregasView from '@/views/ReporteEntregasView.vue';
 import Store from '@/store/index'
 
 Vue.use(VueRouter)
@@ -21,7 +22,8 @@ const routes = [
     // Rota AuthView
     name: "AuthView",
     path: "/auth",
-    component: AuthView
+    component: AuthView,
+    props: true
   },
   {
     name: "RastreioListagemView",
@@ -44,6 +46,12 @@ const routes = [
     path: "/calculo-frete/resultado",
     component: CalculoFreteResultadoView,
     props: true
+  },
+  {
+    name: "ReporteEntregasView",
+    path: "/report",
+    component: ReporteEntregasView,
+    props: true
   }
 ]
 
@@ -54,8 +62,11 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if (to.name !== 'AuthView') {
+    Store.commit('SET_NAME_ROUTE', to);
+  }
+  
   Store.commit('TOGGLE_MENU_PRINCIPAL', false);
-
   next();
 });
 

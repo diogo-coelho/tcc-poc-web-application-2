@@ -41,13 +41,6 @@
                         </p>
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/reporte">
-                        <p class="menu-visivel" :class="{ active: menuPrincipal }">
-                            Reporte de entregas
-                        </p>
-                    </router-link>
-                </li>
             </ul>
         </div>
     </nav>
